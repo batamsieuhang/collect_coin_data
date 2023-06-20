@@ -1,7 +1,5 @@
 # this function take value from one column, example index = 0 similar column 1M
-import requests
 import bs4
-import re
 from urllib.request import Request, urlopen
 
 

@@ -1,6 +1,3 @@
-import requests
-import bs4
-import re
 import time
 from urllib.request import Request, urlopen
 from take_value import take_data
@@ -17,9 +14,9 @@ while (True):
                 count_coin[coin_name] += 1
             else:
                 count_coin[coin_name] = 1
-    sort_count_coin = sorted(
-        count_coin.items(), key=lambda x: x[1], reverse=True)
+    sort_count_coin = dict(sorted(
+        count_coin.items(), key=lambda x: x[1], reverse=True))
     print("---------------------------------------------------------------------------")
-    print(dict(sort_count_coin))
+    print(sort_count_coin)
     print("---------------------------------------------------------------------------\n")
     time.sleep(10)
