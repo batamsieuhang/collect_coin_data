@@ -2,22 +2,21 @@ import requests
 import bs4
 import re
 from urllib.request import Request, urlopen
+from take_value import take_data
 
 
-def take_data():
-    url = "https://ckcoin.top/"
-    req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    webpage = urlopen(req).read()
-    page = bs4.BeautifulSoup(webpage, "html.parser")
+count_coin = {}
+data = take_data()
 
+for value in data.values():
+    for coin in value:
+        coin_name = coin['name']
+        if coin_name in count_coin:
+            count_coin[coin_name] += 1
+        else:
+            count_coin[coin_name] = 1
+print(count_coin)
 
-url = "https://ckcoin.top/"
+sort_count_coin = sorted(count_coin.items(), key=lambda x: x[1], reverse=True)
 
-req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-webpage = urlopen(req).read()
-page = bs4.BeautifulSoup(webpage, "html.parser")
-page.find_all("div", {"class": "col-md-4"})
-
-col_1 = page.find_all("div", {"class": "col-md-4"})[0]
-rows = col_1.find_all('tr')
-print(rows[2].select('a')[0].text.strip())
+print(dict(sort_count_coin))
