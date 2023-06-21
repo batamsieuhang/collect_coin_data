@@ -3,13 +3,13 @@ import bs4
 from urllib.request import Request, urlopen
 
 
-def take_data():
+def take_data(time_value):
     url = "https://ckcoin.top/"
     all_coin = {}
     req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     webpage = urlopen(req).read()
     page = bs4.BeautifulSoup(webpage, "html.parser")
-    for index in range(0, 8):
+    for index in time_value:
         coin = []
         col = page.find_all(
             "div", {"class": "col-md-4"})[index]  # index(=0~1m)
