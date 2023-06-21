@@ -19,6 +19,7 @@ sort_value = int(sys.argv[len(sys.argv)-2])
 
 time_delay =int(sys.argv[len(sys.argv)-1])
 
+process_count_coin = {}
 while (True):
     count_coin = {}
     coin_gap_dict = {}
@@ -32,6 +33,13 @@ while (True):
     print(sort_count_coin)
     for coin, value in sort_count_coin.items():
         if value >= sort_value:
-            print(coin+":"+coin_gap_dict[coin])
+            if coin in process_count_coin:
+                process_count_coin[coin] += 1
+            else:
+                process_count_coin[coin] = 1
+
+    for coin, value in sort_count_coin.items():
+        if value >= sort_value:
+            print(coin+":"+"      "+coin_gap_dict[coin]+"      "+str(process_count_coin[coin]))
     print("-----------------------------SPOTUP--------------------------------------------\n")
     time.sleep(time_delay)
