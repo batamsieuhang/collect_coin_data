@@ -32,4 +32,4 @@ while (True):
         if value >= sort_value:
             print(coin+":"+coin_gap_dict[coin])
     print("-----------------------------FUTURES_SHORT--------------------------------------------\n")
-    time.sleep(10)
+    time.sleep(3)
