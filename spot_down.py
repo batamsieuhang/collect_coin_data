@@ -15,7 +15,10 @@ for i in time_value:
     for key, value in map_time_value.items():
         if i == key:
             map_value.append(value)
-sort_value = int(sys.argv[len(sys.argv)-1])
+sort_value = int(sys.argv[len(sys.argv)-2])
+
+time_delay =int(sys.argv[len(sys.argv)-1])
+
 
 while (True):
     count_coin = {}
@@ -32,4 +35,4 @@ while (True):
         if value >= sort_value:
             print(coin+":"+coin_gap_dict[coin])
     print("-----------------------------SPOTDOWN--------------------------------------------\n")
-    time.sleep(3)
+    time.sleep(time_delay)
