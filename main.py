@@ -6,9 +6,9 @@ import sys
 
 time_value = sys.argv[1:(len(sys.argv)-1)]
 
-map_time_value = {"1": 0, "2": 1, "3": 2,
-                  "4": 3, "5": 4, "10": 5, "15": 6, "20": 7}
-
+map_time_value = {"1m": 0, "2m": 1, "3m": 2,
+                  "4m": 3, "5m": 4, "10m": 5, "15m": 6, "20m": 7,"30m":8,"1h":9,"2h":10,"4h":11,"6h":12,"12h":13,"13h":14}
+url = "https://ckcoin.top/"
 map_value = []
 
 for i in time_value:
@@ -21,7 +21,7 @@ while (True):
     count_coin = {}
     coin_gap_dict = {}
 
-    count_coin, coin_gap_dict = count_num_coin(take_data(map_value))
+    count_coin, coin_gap_dict = count_num_coin(take_data(map_value,url))
 
     sort_count_coin = dict(sorted(
         count_coin.items(), key=lambda x: x[1], reverse=True))
@@ -31,5 +31,5 @@ while (True):
     for coin, value in sort_count_coin.items():
         if value >= sort_value:
             print(coin+":"+coin_gap_dict[coin])
-    print("-----------------------------end--------------------------------------------\n")
+    print("-----------------------------MAIN(SPOTUP)--------------------------------------------\n")
     time.sleep(10)
