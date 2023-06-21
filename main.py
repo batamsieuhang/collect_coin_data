@@ -25,8 +25,8 @@ while (True):
 
     sort_count_coin = dict(sorted(
         count_coin.items(), key=lambda x: x[1], reverse=True))
-    print("------------------------------{current_time}--------------------------------".format(
-        current_time=datetime.now()))
+    print("----------{sort_value}--------------------{current_time}------------{time_value}--------".format(
+        current_time=datetime.now(),time_value=time_value,sort_value=sort_value))
     print(sort_count_coin)
     for coin, value in sort_count_coin.items():
         if value >= sort_value:
