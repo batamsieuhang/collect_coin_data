@@ -3,8 +3,7 @@ import bs4
 from urllib.request import Request, urlopen
 
 
-def take_data(time_value):
-    url = "https://ckcoin.top/"
+def take_data(time_value,url):
     all_coin = {}
     req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     webpage = urlopen(req).read()
