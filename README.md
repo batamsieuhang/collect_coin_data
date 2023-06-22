@@ -37,35 +37,11 @@
 **Ví dụ 1**
 
 ```bash
-python main.py 1 2 3 4 2
+python main.py 1m 2m 3m 4m 2 5
 ```
 
 
-- 1 2 3 4 là các ô 1m, 2m, 3m, 4m
+- 1m 2m 3m 4m là các ô 1m, 2m, 3m, 4m
 - 2 là tùy chọn hiển thị các % tăng của các coin xuất hiện từ 2 lần trở nên
-
-<div align="center">
-        <img src="./img/demo1.png" width="1000" />
-    </div>
-
-
-**Ví dụ 2**
-
-```bash
-python main.py 10 15 20 3
-```
-
-- 10 15 20 là các ô 10m, 15m, 20m
-- 3 là tùy chọn hiển thị các % tăng của các coin xuất hiện từ 3 lần trở nên
-
-<div align="center">
-        <img src="./img/demo2.png" width="1000" />
-    </div>
-
-
-**Lưu ý**
-- Có thể bật nhiều tab cùng 1 lúc bằng cách lặp lại như các chạy code
-<div align="center">
-        <img src="./img/demo3.png" width="1000" />
-    </div>
+- 5 là tùy chọn delay 5s sau mỗi lần chạy
 
