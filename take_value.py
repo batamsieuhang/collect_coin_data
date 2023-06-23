@@ -1,13 +1,12 @@
 # this function take value from one column, example index = 0 similar column 1M
-import bs4
-from urllib.request import Request, urlopen
+import bs4, requests
+
 
 
 def take_data(time_value,url):
     all_coin = {}
-    req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    webpage = urlopen(req).read()
-    page = bs4.BeautifulSoup(webpage, "html.parser")
+    res = requests.get(url,headers={'User-Agent': 'Mozilla/5.0'})
+    page = bs4.BeautifulSoup(res.text, "html.parser")
     for index in time_value:
         coin = []
         col = page.find_all(
