@@ -38,8 +38,9 @@ def print_results(url,time_value,sort_value,time_delay):
         
         print("----------delay={delay}s--------------------{current_time}------------{time_value}--------".format(
             current_time=datetime.now(),time_value=time_value,delay=time_delay))
-        print("----------------------------Thống kê theo số lần xuất hiện của coin từ {count} ô trở lên-----------".format(count=sort_value))
-        print("----------------------------Thống kê theo số lần xuất hiện từ thời điểm chạy------------------------")
+        print("----------------------------Thong ke theo so lan xuat hen cua coin tu {count} o tro len-----------".format(count=sort_value))
+        
+        print("----------------------------Thong ke theo so lan xuat hen tu thoi diem chay------------------------")
         for coin,value in sort_process_count_coin.items():
             space_1 = "     "
             space_2 = "     "
@@ -47,7 +48,7 @@ def print_results(url,time_value,sort_value,time_delay):
             if coin in sort_count_coin and sort_count_coin[coin] >= sort_value:
                 print(coin+":"+space_1+str(coin_gap_dict[coin])+"%"+space_2+str(process_count_coin[coin])+space_3+str(count_coin[coin]))
 
-        print("----------------------------Thống kê theo %------------------------")
+        print("----------------------------Thong ke theo %------------------------")
         for coin,value in sort_process_count_gap_coin.items():
             if coin in sort_count_coin and sort_count_coin[coin] >= sort_value:
                 print(coin+":"+space_1+str(coin_gap_dict[coin])+"%"+space_2+str(process_count_coin[coin])+space_3+str(count_coin[coin]))
