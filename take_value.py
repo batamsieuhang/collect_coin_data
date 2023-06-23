@@ -19,8 +19,10 @@ def take_data(time_value,url):
                 'td')[1].text.strip()  # oldprice
             each_coin["new_price"] = row_1.select(
                 'td')[2].text.strip()  # newprice
-            each_coin["gap"] = row_1.select('td')[3].text.strip()  # gap
+            each_coin["gap"] = float(row_1.select('td')[3].text.strip().strip('%'))  # gap
             coin.append(each_coin)
         all_coin[index] = coin
 
     return all_coin
+
+
